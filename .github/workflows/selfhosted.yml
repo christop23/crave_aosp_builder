@@ -488,11 +488,7 @@ jobs:
         echo "Run ID: ${{ github.run_id }}"; \
 
         # Build the ROM
-        cd vendor/voltage-priv/keys && \
-        ./keys.sh && \
-        cd .. && \
-        cd .. && \
-        cd .. && \
+        ./vendor/voltage-priv/keys/keys.sh && \
         $LUNCH && \
         make installclean && \
         ${{ github.event.inputs.BUILD_COMMAND }}"
