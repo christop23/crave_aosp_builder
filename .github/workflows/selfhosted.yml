@@ -319,7 +319,7 @@ jobs:
       LOCAL_MANIFEST: "${{ needs.prepare.outputs.LOCAL_MANIFEST }}"
 
   build:
-    timeout-minutes: 1440
+    timeout-minutes: 3600
     name: Build using foss.crave.io
     needs: test
     runs-on: self-hosted
@@ -491,7 +491,7 @@ jobs:
         $LUNCH && \
         make installclean && \
         ${{ github.event.inputs.BUILD_COMMAND }}"
-      timeout-minutes: 1440
+      timeout-minutes: 3600
 
       # Send Build 'status' notification (Success)
     - name: Telegram Notification
